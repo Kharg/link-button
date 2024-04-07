@@ -41,7 +41,8 @@ Choose Between 17 different button styles:
 - outline-light
 
   ![image](https://github.com/Kharg/link-button/assets/32223252/af29939c-fc65-4e42-9bec-01af545050bf)
-  ![image](https://github.com/Kharg/link-button/assets/32223252/69e968e4-7aa2-454a-801f-b6e22642727a)
+  ![image](https://github.com/Kharg/link-button/assets/32223252/aa57a77c-5b01-4699-a2e9-620d5d94062b)
+
 
 
 And between 6 different button sizes:
