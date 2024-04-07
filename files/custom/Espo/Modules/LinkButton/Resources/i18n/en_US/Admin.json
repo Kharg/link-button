@@ -1,0 +1,51 @@
+{
+    "fieldTypes": {
+        "link-button": "Link Button"
+    },
+    "fields": {
+        "iconLeft": "Left Icon",
+        "iconRight": "Right Icon",
+        "mode": "Mode",
+        "buttonLabel": "Button Label",
+        "hideLabel": "Hide Label", 
+        "buttonSize": "Button Size",
+        "style": "Style",
+        "title": "Title"
+    },
+    "options": {
+        "style": {
+            "default": "default",
+            "primary": "Primary",
+            "secondary": "Secondary",
+            "success": "Success",
+            "danger": "Danger",
+            "warning": "Warning",
+            "info": "info",
+            "dark": "Dark",
+            "light": "Light",
+            "outline-primary": "Outline Primary",
+            "outline-secondary": "Outline Secondary",
+            "outline-success": "Outline Success",
+            "outline-danger": "Outline Danger",
+            "outline-warning": "Outline Warning",
+            "outline-info": "Outline info",
+            "outline-dark": "Outline Dark",
+            "outline-light": "Outline Light"
+        },
+        "buttonSize": {
+            "btn-sm": "Small",
+            "btn-md": "Medium",
+            "btn-lg": "Large",
+            "btn-sm btn-block": "Block Small",
+            "btn-md btn-block": "Block Medium",
+            "btn-lg btn-block": "Block Large"
+        },
+        "mode": {
+            "openNewTab": "Open New Tab",
+            "openPopup": "Open Popup",
+            "openModal": "Open Modal",
+            "openEspoModal": "Apri Espo Modal",
+            "runEspoWorkflow": "Run Workflow"
+        }
+    }
+}

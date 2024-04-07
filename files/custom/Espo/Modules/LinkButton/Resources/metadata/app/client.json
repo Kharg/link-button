@@ -1,0 +1,10 @@
+{
+    "developerModeCssList": [
+        "__APPEND__",
+        "client/custom/modules/link-button/css/buttons.css"
+    ],
+    "cssList": [
+        "__APPEND__",
+        "client/custom/modules/link-button/css/buttons.css"
+    ]
+}

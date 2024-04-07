@@ -1,0 +1,51 @@
+{
+    "fieldTypes": {
+        "link-button": "Bottone Link"
+    },
+    "fields": {
+        "iconLeft": "Icona Sinistra",
+        "iconRight": "Icona Destra",
+        "mode": "Modalità",
+        "buttonLabel": "Etichetta Bottone",
+        "hideLabel": "Nascondi Etichetta",
+        "buttonSize": "Dimensione Bottone",
+        "style": "Stile",
+        "title": "Titolo"
+    },
+    "options": {
+        "style": {
+            "default": "Predefinito",
+            "primary": "Primario",
+            "secondary": "Secondario",
+            "success": "Successo",
+            "danger": "Pericolo",
+            "warning": "Avvertimento",
+            "info": "info",
+            "dark": "Scuro",
+            "light": "Chiaro",
+            "outline-primary": "Contorno Primario",
+            "outline-secondary": "Contorno Secondario",
+            "outline-success": "Contorno Successo",
+            "outline-danger": "Contorno Pericolo",
+            "outline-warning": "Contorno Avvertimento",
+            "outline-info": "Contorno info",
+            "outline-dark": "Contorno Scuro",
+            "outline-light": "Contorno Chiaro"
+        },
+        "buttonSize": {
+            "btn-sm": "Piccolo",
+            "btn-md": "Medio",
+            "btn-lg": "Grande",
+            "btn-sm btn-block": "Blocco Piccolo",
+            "btn-md btn-block": "Blocco Medio",
+            "btn-lg btn-block": "Blocco Grande"
+        },
+        "mode": {
+            "openNewTab": "Apri Nuova Scheda",
+            "openPopup": "Apri Popup",
+            "openModal": "Apri Modal",
+            "openEspoModal": "Apri Espo Modal",
+            "runEspoWorkflow": "Avvia Workflow"
+        }
+    }
+}

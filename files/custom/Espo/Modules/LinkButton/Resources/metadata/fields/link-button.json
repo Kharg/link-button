@@ -1,0 +1,109 @@
+{
+    "params": [
+        {
+            "name": "buttonLabel",
+            "type": "varchar"
+        },
+        {
+            "name": "title",
+            "type": "varchar"
+        },
+        {
+            "name": "hideLabel",
+            "type": "bool",
+            "tooltip": true,
+            "default": false
+        },
+        {
+            "name": "required",
+            "type": "bool",
+            "default": false
+        },
+        {
+            "name": "mode",
+            "type": "enum",
+            "default": "openNewTab",
+            "options": [
+                "openNewTab",
+                "openPopup",
+                "openModal",
+                "openEspoModal",
+                "runEspoWorkflow"
+            ]
+        },
+        {
+            "name": "style",
+            "type": "enum",
+            "default": "default",
+            "options": [
+                "default",
+                "primary",
+                "secondary",
+                "success",
+                "danger",
+                "warning",
+                "info",
+                "dark",
+                "light",
+                "outline-primary",
+                "outline-secondary",
+                "outline-success",
+                "outline-danger",
+                "outline-warning",
+                "outline-info",
+                "outline-dark",
+                "outline-light"
+            ]
+        },
+        {
+            "name": "buttonSize",
+            "type": "enum",
+            "default": "btn-md",
+            "options": [
+                "btn-sm",
+                "btn-md",
+                "btn-lg",
+                "btn-sm btn-block",
+                "btn-md btn-block",
+                "btn-lg btn-block"
+            ]
+        },
+        {
+            "name": "iconLeft",
+            "type": "varchar",
+            "default": null,
+            "view": "views/admin/entity-manager/fields/icon-class"
+        },
+        {
+            "name": "iconRight",
+            "type": "varchar",
+            "default": null,
+            "view": "views/admin/entity-manager/fields/icon-class"
+        },
+        {
+            "name": "default",
+            "type": "varchar"
+        },
+        {
+            "name": "strip",
+            "type": "bool"
+        },
+        {
+            "name": "audited",
+            "type": "bool"
+        },
+        {
+            "name": "readOnly",
+            "type": "bool"
+        },
+        {
+            "name": "readOnlyAfterCreate",
+            "type": "bool"
+        }
+    ],
+    "filter": true,
+    "fieldDefs": {
+        "type": "varchar"
+    },
+    "view": "link-button:views/fields/link-button"
+}

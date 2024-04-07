@@ -1,0 +1,8 @@
+{
+    "fieldInfo": {
+        "link-button": "A customizable button that can store an url."
+    },
+    "tooltips": {
+        "hideLabel": "If active consider disabling inline edit as well if you plan to use block button size."
+    }
+}
