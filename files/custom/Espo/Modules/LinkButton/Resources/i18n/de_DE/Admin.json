@@ -1,0 +1,51 @@
+{
+    "fieldTypes": {
+        "link-button": "Schaltfläche-Link"
+    },
+    "fields": {
+        "iconLeft": "Icon links",
+        "iconRight": "Icon rechts",
+        "mode": "Modus",
+        "buttonLabel": "Schaltflächenbeschriftung",
+        "hideLabel": "Beschriftung ausblenden", 
+        "buttonSize": "Größe der Schaltfläche",
+        "style": "Stil",
+        "title": "Title"
+    },
+    "options": {
+        "style": {
+            "default": "Standard",
+            "primary": "Primär",
+            "secondary": "Sekundär",
+            "success": "Erfolgreich",
+            "danger": "Gefahr",
+            "warning": "Warnung",
+            "info": "Info",
+            "dark": "Dunkel",
+            "light": "Hell",
+            "outline-primary": "Umrandung: Primär",
+            "outline-secondary": "Umrandung: Sekundär",
+            "outline-success": "Umrandung: Erfolgreich",
+            "outline-danger": "Umrandung: Gefahr",
+            "outline-warning": "Umrandung: Warnung",
+            "outline-info": "Umrandung: Info",
+            "outline-dark": "Umrandung: Dunkel",
+            "outline-light": "Umrandung: Hell"
+        },
+        "buttonSize": {
+            "btn-sm": "Klein",
+            "btn-md": "Mittel",
+            "btn-lg": "Groß",
+            "btn-sm btn-block": "Block Klein",
+            "btn-md btn-block": "Block Mittel",
+            "btn-lg btn-block": "Block Groß"
+        },
+        "mode": {
+            "openNewTab": "Neuen Tab öffnen",
+            "openPopup": "Popup öffnen",
+            "openModal": "Modal öffnen",
+            "openEspoModal": "Espo Modal öffnen",
+            "runEspoWorkflow": "Workflow ausführen"
+        }
+    }
+}

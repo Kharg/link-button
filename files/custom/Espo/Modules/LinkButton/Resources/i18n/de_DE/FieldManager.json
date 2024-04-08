@@ -1,0 +1,8 @@
+{
+    "fieldInfo": {
+        "link-button": "Eine konfigurierbare Schaltfläche, die eine URL speichern kann."
+    },
+    "tooltips": {
+        "hideLabel": "Wenn aktiv, sollten Sie auch die Inline-Bearbeitung deaktivieren, falls Sie planen die Schaltflächengröße Block zu verwenden."
+    }
+}
