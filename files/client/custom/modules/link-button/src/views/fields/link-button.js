@@ -110,12 +110,7 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
             if (entityType !== 'Workflow') {
                 return Espo.Ui.error(('Error: not a workflow'));
             }
-            Espo.Ajax.getRequest('Workflow/' + workflowId, {
-            }).then((response) => {
-                if (response.type !== 'manual') {
-                    Espo.Ui.error(('Not a Manual workflow'));
-                    return;
-                }
+            //TODO Api action to check if the workflow is manual
                 Espo.Ajax.postRequest('WorkflowManual/action/run', {
                     targetId: model.id,
                     id: workflowId,
@@ -124,7 +119,7 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
                         Espo.Ui.success(('Done'));
                     });
                 });
-            });
+            
         },
 
         actionOpenPopup: function() {
