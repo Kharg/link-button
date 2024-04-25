@@ -61,7 +61,7 @@ After installation visit the entity manager to create a new Link Button field
 
 ## Requires
 
-- EspoCRM >= 8.0
+- EspoCRM >= 7.0
 
 
 ## Installation
