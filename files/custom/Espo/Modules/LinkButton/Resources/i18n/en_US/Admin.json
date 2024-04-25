@@ -42,6 +42,7 @@
         },
         "mode": {
             "openNewTab": "Open New Tab",
+            "openUrl": "Open URL",
             "openPopup": "Open Popup",
             "openModal": "Open Modal",
             "openEspoModal": "Open Espo Modal",

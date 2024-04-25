@@ -20,6 +20,28 @@
         {{/if}}
 {{/ifEqual}}
 
+{{#ifEqual mode 'openUrl'}}
+    {{#if value}}
+        <a href="{{url}}" class="btn btn-{{style}} {{buttonSize}}" title="{{title}}">
+            {{#if iconLeft}}
+            <span class="{{iconLeft}}"></span>
+			{{/if}}
+			{{#if buttonLabel}}
+            <span> {{buttonLabel}} </span>
+			{{/if}}
+            {{#if iconRight}}
+            <span class="{{iconRight}}"></span>
+			{{/if}}
+        </a>
+        {{else}}
+            {{#if valueIsSet}}
+                <span class="none-value">{{translate 'None'}}</span>
+            {{else}}
+                <span class="loading-value">...</span>
+            {{/if}}
+        {{/if}}
+{{/ifEqual}}
+
 {{#ifEqual mode 'openPopup'}}
     {{#if value}}
         <button class="btn btn-{{style}} {{buttonSize}}" title="{{title}}" data-action="open-popup">

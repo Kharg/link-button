@@ -25,6 +25,7 @@
             "default": "openNewTab",
             "options": [
                 "openNewTab",
+                "openUrl",
                 "openPopup",
                 "openModal",
                 "openEspoModal",
@@ -83,10 +84,6 @@
         {
             "name": "default",
             "type": "varchar"
-        },
-        {
-            "name": "strip",
-            "type": "bool"
         },
         {
             "name": "audited",

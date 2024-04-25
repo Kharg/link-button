@@ -42,6 +42,7 @@
         },
         "mode": {
             "openNewTab": "Apri Nuova Scheda",
+            "openUrl": "Apri URL",
             "openPopup": "Apri Popup",
             "openModal": "Apri Modal",
             "openEspoModal": "Apri Espo Modal",

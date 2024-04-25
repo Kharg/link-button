@@ -3,12 +3,12 @@
     "description": "Button Field to open a link in a new tab, in a popup or a modal.",
     "author": "Andrew Fontana",
     "php": [
-        ">=8.0"
+        ">=7.0"
     ],
     "acceptableVersions": [
-        ">=8.0"
+        ">=7.0"
     ],
-    "version": "1.4.0",
+    "version": "1.5.0",
     "skipBackup": true,
     "releaseDate": "2024-04-07"
 }

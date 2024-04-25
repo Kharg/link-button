@@ -119,7 +119,6 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
                         Espo.Ui.success(('Done'));
                     });
                 });
-            
         },
 
         actionOpenPopup: function() {
