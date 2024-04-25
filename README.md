@@ -13,6 +13,7 @@ This Extension add a new field called Link button, this button allows to perform
 This extension enhances EspoCRM by introducing a button field that can store URLs and execute multiple actions, including:
 
 - Open the URL in a new browser tab.
+- Open the URL in the current browser tab.
 - Displaying the URL content within a popup window.
 - Embedding the URL content inside an Espo Modal.
 - Integrating EspoCRM-specific links within an Espo Modal for seamless navigation.
