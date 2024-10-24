@@ -73,6 +73,21 @@
         </button>
     {{/if}}
 {{/ifEqual}}
+{{#ifEqual mode 'quickCreate'}}
+    {{#if value}}
+        <button class="btn btn-{{style}} label-md" style="height:24px" title="{{title}}" data-action="quick-create">
+		{{#if iconLeft}}
+		<span class="{{iconLeft}}"></span>
+		{{/if}}
+		{{#if buttonLabel}}
+		<span> {{buttonLabel}} </span>
+		{{/if}}
+		{{#if iconRight}}
+		<span class="{{iconRight}}"></span>
+		{{/if}}
+        </button>
+    {{/if}}
+{{/ifEqual}}
 {{#ifEqual mode 'runEspoWorkflow'}}
     {{#if value}}
         <button class="btn btn-{{style}} label-md" style="height:24px" title="{{title}}" data-action="run-workflow">

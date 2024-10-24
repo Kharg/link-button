@@ -3,6 +3,7 @@
         "link-button": "Um botão configurável que pode salvar uma URL."
     },
     "tooltips": {
-        "hideLabel": "Se estiver ativo, você também deve desativar a edição embutida se planeja usar o formato Bloco do botão."
+        "hideLabel": "Se estiver ativo, você também deve desativar a edição embutida se planeja usar o formato Bloco do botão.",
+        "placeholder": "Texto a ser mostrado como uma dica quando não houver valor no campo."
     }
 }

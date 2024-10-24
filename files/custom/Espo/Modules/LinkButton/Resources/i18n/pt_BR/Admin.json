@@ -7,6 +7,7 @@
         "iconRight": "Ícone à direita",
         "mode": "Modo",
         "buttonLabel": "Etiqueta",
+        "placeholder": "Valor do Placeholder",
         "hideLabel": "Ocultar rótulo", 
         "buttonSize": "Tamanho do botão",
         "style": "Estilo",
@@ -46,8 +47,8 @@
             "openPopup": "abrir pop-up",
             "openModal": "abrir Modal",
             "openEspoModal": "abrir Espo Modal",
+            "quickCreate": "Criação rápida",
             "runEspoWorkflow": "Executar Workflow"
         }
     }
 }
-

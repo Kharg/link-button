@@ -3,6 +3,7 @@
         "link-button": "Un bottone personalizzabile contentente un link."
     },
     "tooltips": {
-        "hideLabel": "Se attivo, prendere in considerazione anche la disattivazione della modifica in linea se si intende utilizzare la dimensione del pulsante di tipo blocco."
+        "hideLabel": "Se attivo, prendere in considerazione anche la disattivazione della modifica in linea se si intende utilizzare la dimensione del pulsante di tipo blocco.",
+        "placeholder": "Testo da mostrare come suggerimento quando non vi è nessun valore nel campo."
     }
 }

@@ -7,6 +7,7 @@
         "iconRight": "Icona Destra",
         "mode": "Modalità",
         "buttonLabel": "Etichetta Bottone",
+        "placeholder": "Testo Segnaposto",
         "hideLabel": "Nascondi Etichetta",
         "buttonSize": "Dimensione Bottone",
         "style": "Stile",
@@ -46,6 +47,7 @@
             "openPopup": "Apri Popup",
             "openModal": "Apri Modal",
             "openEspoModal": "Apri Espo Modal",
+            "quickCreate": "Creazione Rapida",
             "runEspoWorkflow": "Avvia Workflow"
         }
     }

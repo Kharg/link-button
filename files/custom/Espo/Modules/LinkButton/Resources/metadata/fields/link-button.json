@@ -5,6 +5,11 @@
             "type": "varchar"
         },
         {
+            "name": "placeholder",
+            "type": "varchar",
+            "tooltip": true
+        },
+        {
             "name": "title",
             "type": "varchar"
         },
@@ -29,6 +34,7 @@
                 "openPopup",
                 "openModal",
                 "openEspoModal",
+                "quickCreate",
                 "runEspoWorkflow"
             ]
         },

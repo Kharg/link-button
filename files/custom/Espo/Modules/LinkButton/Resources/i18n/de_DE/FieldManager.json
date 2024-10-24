@@ -3,6 +3,7 @@
         "link-button": "Eine konfigurierbare Schaltfläche, die eine URL speichern kann."
     },
     "tooltips": {
-        "hideLabel": "Wenn aktiv, sollten Sie auch die Inline-Bearbeitung deaktivieren, falls Sie planen die Schaltflächengröße Block zu verwenden."
+        "hideLabel": "Wenn aktiv, sollten Sie auch die Inline-Bearbeitung deaktivieren, falls Sie planen die Schaltflächengröße Block zu verwenden.",
+        "placeholder": "Der Text, der als Hinweis angezeigt wird, wenn das Feld keinen Wert enthält."
     }
 }

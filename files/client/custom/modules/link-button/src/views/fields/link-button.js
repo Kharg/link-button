@@ -4,6 +4,8 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
 
         type: 'link-button',
 
+        editTemplate: 'link-button:fields/edit',
+
         listTemplate: 'link-button:fields/list',
 
         detailTemplate: 'link-button:fields/detail',
@@ -17,6 +19,9 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
             },
             'click button[data-action="open-popup"]': function() {
                 this.actionOpenPopup();
+            },
+            'click button[data-action="quick-create"]': function() {
+                this.actionQuickCreate();
             },
             'click button[data-action="run-workflow"]': function() {
                 this.actionEspoWorkFlow();
@@ -36,6 +41,7 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
                 iconRight: this.model.getFieldParam(this.name, 'iconRight'),
                 mode: this.model.getFieldParam(this.name, 'mode'),
                 buttonLabel: this.model.getFieldParam(this.name, 'buttonLabel') || null,
+                placeholder: this.model.getFieldParam(this.name, 'placeholder') || null,
                 title: this.model.getFieldParam(this.name, 'title') || null,
                 buttonSize: this.model.getFieldParam(this.name, 'buttonSize'),
                 style: this.model.getFieldParam(this.name, 'style'),
@@ -90,6 +96,60 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
                 });
                 this.listenToOnce(view, 'close', () => {
                     this.clearView('quickView');
+                });
+            }, this);
+        },
+
+        actionQuickCreate: function() {
+            let model = this.model;
+            let url = this.model.get(this.name);
+            let hashPart = url.split('#')[1];
+            if (!hashPart) {
+                return Espo.Ui.error('Error: this is not a valid CRM URL');
+            }
+        
+            let parts = hashPart.split('/');
+            let entityTypeModal = parts[0];
+            if (!entityTypeModal) {
+                return Espo.Ui.error('Error: no entity type found');
+            }
+
+            let viewName;
+            if (entityTypeModal === 'Email') {
+                viewName = 'views/modals/compose-email';
+            } else {
+                viewName = this.getMetadata().get('clientDefs.' + entityTypeModal + '.modalViews.edit') || 'views/modals/edit';
+            }
+            
+            let attributes = {
+                parentId: model.id,
+                parentType: model.entityType,
+                parentName: model.get('name'),
+            };
+
+            if (
+                entityTypeModal === 'Email' &&
+                ['Contact', 'Lead', 'Account'].includes(model.entityType) &&
+                model.get('emailAddress')
+            ) {
+                attributes.to = model.get('emailAddress');
+                attributes.nameHash = {};
+                attributes.nameHash[model.get('emailAddress')] = model.get('name');
+            }
+
+            this.notify('Loading...');
+            this.createView('quickCreate', viewName, {
+                scope: entityTypeModal,
+                attributes: attributes,
+            }, function (view) {
+                view.render();
+                this.notify(false);
+                this.listenTo(view, 'after:save', () => {
+                    model.fetch();
+                });
+                this.listenToOnce(view, 'close', () => {
+                    this.clearView('quickCreate');
+                    //model.collection.fetch();
                 });
             }, this);
         },

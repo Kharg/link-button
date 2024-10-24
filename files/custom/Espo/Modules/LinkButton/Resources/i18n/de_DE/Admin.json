@@ -7,6 +7,7 @@
         "iconRight": "Icon rechts",
         "mode": "Modus",
         "buttonLabel": "Beschriftung",
+        "placeholder": "Platzhalter Wert",
         "hideLabel": "Label ausblenden", 
         "buttonSize": "Größe der Schaltfläche",
         "style": "Stil",
@@ -46,6 +47,7 @@
             "openPopup": "Popup öffnen",
             "openModal": "Modal öffnen",
             "openEspoModal": "Espo Modal öffnen",
+            "quickCreate": "Schnelles Erstellen",
             "runEspoWorkflow": "Workflow ausführen"
         }
     }

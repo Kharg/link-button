@@ -7,6 +7,7 @@
         "iconRight": "Right Icon",
         "mode": "Mode",
         "buttonLabel": "Button Label",
+        "placeholder": "Placeholder Value",
         "hideLabel": "Hide Label", 
         "buttonSize": "Button Size",
         "style": "Style",
@@ -46,6 +47,7 @@
             "openPopup": "Open Popup",
             "openModal": "Open Modal",
             "openEspoModal": "Open Espo Modal",
+            "quickCreate": "Quick Create",
             "runEspoWorkflow": "Run Workflow"
         }
     }
