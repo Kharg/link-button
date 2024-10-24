@@ -6,11 +6,11 @@
         "iconLeft": "Icon links",
         "iconRight": "Icon rechts",
         "mode": "Modus",
-        "buttonLabel": "Schaltflächenbeschriftung",
-        "hideLabel": "Beschriftung ausblenden", 
+        "buttonLabel": "Beschriftung",
+        "hideLabel": "Label ausblenden", 
         "buttonSize": "Größe der Schaltfläche",
         "style": "Stil",
-        "title": "Title"
+        "title": "Titel"
     },
     "options": {
         "style": {
@@ -41,8 +41,8 @@
             "btn-lg btn-block": "Block Groß"
         },
         "mode": {
-            "openNewTab": "Neuen Tab öffnen",
-            "openUrl": "Neuen URL",
+            "openNewTab": "In neuem Tab öffnen",
+            "openUrl": "Im gleichen Fenster öffnen",
             "openPopup": "Popup öffnen",
             "openModal": "Modal öffnen",
             "openEspoModal": "Espo Modal öffnen",
