@@ -11,7 +11,12 @@
         "hideLabel": "Hide Label", 
         "buttonSize": "Button Size",
         "style": "Style",
-        "title": "Title"
+        "title": "Title",
+        "confirmationDialog": "Confirmation Dialog",
+        "confirmationText": "Confirmation Text",
+        "hideOriginalWorkflowAction": "Hide Original Workflow Action",
+        "popupHeight": "Popup Height",
+        "popupWidth": "Popup Width"
     },
     "options": {
         "style": {

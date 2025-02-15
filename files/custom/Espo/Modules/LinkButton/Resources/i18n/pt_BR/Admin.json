@@ -11,7 +11,12 @@
         "hideLabel": "Ocultar rótulo", 
         "buttonSize": "Tamanho do botão",
         "style": "Estilo",
-        "title": "Título"
+        "title": "Título",
+        "confirmationDialog": "Confirmation Dialog",
+        "confirmationText": "Confirmation Text",
+        "hideOriginalWorkflowAction": "Hide Original Workflow Action",
+        "popupHeight": "Popup Height",
+        "popupWidth": "Popup Width"
     },
     "options": {
         "style": {
@@ -36,7 +41,7 @@
         "buttonSize": {
             "btn-sm": "Pequeno",
             "btn-md": "Médio",
-            "btn-lg": "Groß",
+            "btn-lg": "Grande",
             "btn-sm btn-block": "Bloco Pequeno",
             "btn-md btn-block": "Bloco Médio",
             "btn-lg btn-block": "Bloco Grande"

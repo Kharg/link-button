@@ -1,42 +1,59 @@
-define('link-button:views/fields/link-button', 'views/fields/url', function (Dep) {
+define('link-button:views/fields/link-button', ['views/fields/url'], (Dep) => {
+    return class extends Dep {
 
-    return Dep.extend({
+        type = 'link-button'
+        editTemplate = 'link-button:fields/edit'
+        listTemplate = 'link-button:fields/list'
+        detailTemplate = 'link-button:fields/detail'
 
-        type: 'link-button',
+        setup() {
+            super.setup();
 
-        editTemplate: 'link-button:fields/edit',
-
-        listTemplate: 'link-button:fields/list',
-
-        detailTemplate: 'link-button:fields/detail',
-
-        events: {
-            'click button[data-action="open-modal"]': function() {
+            this.events['click button[data-action="open-modal"]'] = () => {
                 this.actionOpenModal();
-            },
-            'click button[data-action="espo-modal"]': function() {
+            };
+            
+            this.events['click button[data-action="espo-modal"]'] = () => {
                 this.actionEspoModal();
-            },
-            'click button[data-action="open-popup"]': function() {
-                this.actionOpenPopup();
-            },
-            'click button[data-action="quick-create"]': function() {
-                this.actionQuickCreate();
-            },
-            'click button[data-action="run-workflow"]': function() {
-                this.actionEspoWorkFlow();
-            },
-        },
+            };
 
-        afterRender: function() {
-            Dep.prototype.afterRender.call(this);
-            if (this.model.getFieldParam(this.name, 'hideLabel') === true) {
+            this.events['click button[data-action="open-popup"]'] = () => {
+                this.actionOpenPopup();
+            };
+
+            this.events['click button[data-action="quick-create"]'] = () => {
+                this.actionQuickCreate();
+            };
+            
+            this.events['click button[data-action="run-workflow"]'] = () => {
+                this.actionCheckWorkFlow();
+            };
+
+        }
+
+        afterRender() {
+            super.afterRender();
+            const superParent = this.getParentView().getParentView()._parentView;
+            const url = this.model.get(this.name);
+            const hideLabel = this.model.getFieldParam(this.name, 'hideLabel');
+            const isDetailMode = this.isDetailMode();
+            const hideOriginalWorkflowAction = this.model.getFieldParam(this.name, 'hideOriginalWorkflowAction');
+            const mode = this.model.getFieldParam(this.name, 'mode');
+        
+            if (hideLabel === true) {
                 this.getLabelElement().hide();
             }
-        },
+        
+            if (url && isDetailMode && hideOriginalWorkflowAction === true && mode === 'runEspoWorkflow') {
+                const workflowId = url.split('#')[1]?.split('/').pop();
+                superParent.hideHeaderActionItem(`runWorkflow_${workflowId}`);
+            }
 
-        data: function() {
-            return _.extend({
+        }
+
+        data() {
+            return {
+                ...super.data(),
                 iconLeft: this.model.getFieldParam(this.name, 'iconLeft'),
                 iconRight: this.model.getFieldParam(this.name, 'iconRight'),
                 mode: this.model.getFieldParam(this.name, 'mode'),
@@ -45,10 +62,10 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
                 title: this.model.getFieldParam(this.name, 'title') || null,
                 buttonSize: this.model.getFieldParam(this.name, 'buttonSize'),
                 style: this.model.getFieldParam(this.name, 'style'),
-            }, Dep.prototype.data.call(this));
-        },
+            };
+        }
 
-        actionOpenModal: function() {
+        actionOpenModal() {
             this.notify('Loading...');
             this.createView('dialog', 'link-button:views/modals/button-url', {
                 buttonLabel: this.model.getFieldParam(this.name, 'buttonLabel') || null,
@@ -62,9 +79,9 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
                     this.clearView('dialog');
                 });
             }, this);
-        },
+        }
 
-        actionEspoModal: function() {
+        actionEspoModal() {
             let model = this.model;
             let url = this.model.get(this.name);
             let hashPart = url.split('#')[1];
@@ -98,9 +115,9 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
                     this.clearView('quickView');
                 });
             }, this);
-        },
+        }
 
-        actionQuickCreate: function() {
+        actionQuickCreate() {
             let model = this.model;
             let url = this.model.get(this.name);
             let hashPart = url.split('#')[1];
@@ -152,9 +169,33 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
                     //model.collection.fetch();
                 });
             }, this);
-        },
+        }
 
-        actionEspoWorkFlow: function() {
+        actionCheckWorkFlow() {
+            let message = this.translate('confirmation', 'messages');
+            let confirmationText = this.model.getFieldParam(this.name, 'confirmationText');
+            let confirmation = this.model.getFieldParam(this.name, 'confirmationDialog');
+            if (confirmationText) {
+                message = this.getHelper().transformMarkdownText(confirmationText).toString();
+            }
+
+            if (!confirmation) {
+                this.actionEspoWorkFlow();
+
+                return;
+            }
+
+            Espo.Ui.confirm(message, {
+                    confirmText: this.translate('Yes', 'labels'),
+                    cancelText: this.translate('No', 'labels'),
+                    backdrop: true,
+                    isHtml: true,
+                })
+                .then(() => this.actionEspoWorkFlow());
+        }
+        
+
+        actionEspoWorkFlow() {
             let model = this.model;
             let url = model.get(this.name);
             let hashPart = url.split('#')[1];
@@ -170,19 +211,32 @@ define('link-button:views/fields/link-button', 'views/fields/url', function (Dep
             if (entityType !== 'Workflow') {
                 return Espo.Ui.error(('Error: not a workflow'));
             }
-            //TODO Api action to check if the workflow is manual
-                Espo.Ajax.postRequest('WorkflowManual/action/run', {
-                    targetId: model.id,
-                    id: workflowId,
-                }).then(() => {
-                    model.fetch().then(() => {
-                        Espo.Ui.success(('Done'));
+        
+            Espo.Ajax.getRequest('LinkButton/WorkflowCheck/' + workflowId)
+                .then(response => {
+                    if (response.isManual === false) {
+                        return Espo.Ui.error(('Error: not a manual or active workflow'));
+                    }
+        
+                    Espo.Ajax.postRequest('WorkflowManual/action/run', {
+                        targetId: model.id,
+                        id: workflowId,
+                    }).then(() => {
+                        model.fetch().then(() => {
+                            Espo.Ui.success(('Done'));
+                        });
                     });
+                })
+                .catch(error => {
+                    console.error(error);
+                    Espo.Ui.error(('Error checking workflow type'));
                 });
-        },
-
-        actionOpenPopup: function() {
-            window.open(this.model.get(this.name), '_blank', 'scrollbars=yes,height=800,width=600');
-        },
-    });
+        }
+        
+        actionOpenPopup() {
+            const popupHeight = this.model.getFieldParam(this.name, 'popupHeight') || 800;
+            const popupWidth = this.model.getFieldParam(this.name, 'popupWidth') || 600;
+            window.open(this.model.get(this.name), '_blank', `scrollbars=yes,height=${popupHeight},width=${popupWidth}`);
+        }
+    };
 });

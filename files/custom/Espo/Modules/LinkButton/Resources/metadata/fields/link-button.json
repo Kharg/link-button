@@ -34,9 +34,38 @@
                 "openPopup",
                 "openModal",
                 "openEspoModal",
-                "quickCreate",
-                "runEspoWorkflow"
-            ]
+                "quickCreate"
+            ],
+            "view": "link-button:views/admin/field-manager/fields/mode"
+        },
+        {
+            "name": "hideOriginalWorkflowAction",
+            "type": "bool",
+            "view": "link-button:views/admin/field-manager/fields/confirmation-dialog"
+        },
+        {
+            "name": "confirmationDialog",
+            "type": "bool",
+            "view": "link-button:views/admin/field-manager/fields/confirmation-dialog"
+        },
+        {
+            "name": "confirmationText",
+            "type": "text",
+            "view": "link-button:views/admin/field-manager/fields/confirmation-text"
+        },
+        {
+            "name": "popupHeight",
+            "type": "int",
+            "default": 800,
+            "disableFormatting": true,
+            "view": "link-button:views/admin/field-manager/fields/popup"
+        },
+        {
+            "name": "popupWidth",
+            "type": "int",
+            "default": 600,
+            "disableFormatting": true,
+            "view": "link-button:views/admin/field-manager/fields/popup"
         },
         {
             "name": "style",

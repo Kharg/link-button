@@ -1,8 +1,7 @@
-define('link-button:views/modals/espo-modal', 'views/modals/detail', function (Dep) {
+define('link-button:views/modals/espo-modal', ['views/modals/detail'], (Dep) => {
+    return class extends Dep {
 
-    return Dep.extend({
+        isCollapsable = true
 
-        isCollapsable: true,
-        
-    });
+    };
 });

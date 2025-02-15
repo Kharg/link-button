@@ -11,7 +11,12 @@
         "hideLabel": "Nascondi Etichetta",
         "buttonSize": "Dimensione Bottone",
         "style": "Stile",
-        "title": "Titolo"
+        "title": "Titolo",
+        "confirmationDialog": "Richiedi Conferma",
+        "confirmationText": "Testo Conferma",
+        "hideOriginalWorkflowAction": "Nascondi Azione Workflow Originale",
+        "popupHeight": "Altezza Popup",
+        "popupWidth": "Larghezza Popup"
     },
     "options": {
         "style": {

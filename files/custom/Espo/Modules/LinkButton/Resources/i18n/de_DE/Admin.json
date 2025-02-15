@@ -11,7 +11,12 @@
         "hideLabel": "Label ausblenden", 
         "buttonSize": "Größe der Schaltfläche",
         "style": "Stil",
-        "title": "Titel"
+        "title": "Titel",
+        "confirmationDialog": "Bestätigungsdialog",
+        "confirmationText": "Bestätigungstext",
+        "hideOriginalWorkflowAction": "Original Workflow-Aktion ausblenden",
+        "popupHeight": "Popup-Höhe",
+        "popupWidth": "Popup-Breite"
     },
     "options": {
         "style": {

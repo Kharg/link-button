@@ -1,0 +1,10 @@
+[
+    {
+      "route": "/LinkButton/WorkflowCheck/:id",
+      "method": "get",
+      "actionClassName": "Espo\\Modules\\LinkButton\\Api\\WorkflowCheck",
+      "params": {
+            "id": ":id"
+        }
+    }
+]

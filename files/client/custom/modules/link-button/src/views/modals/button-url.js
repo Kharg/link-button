@@ -1,20 +1,20 @@
-define('link-button:views/modals/button-url', 'views/modal', function (Dep) {
+define('link-button:views/modals/button-url', ['views/modal'], (Dep) => {
+    return class extends Dep {
 
-    return Dep.extend({
-
-        template: 'link-button:modals/button-url',
-        fitHeight: true,
-        isCollapsable: true,
+        template = 'link-button:modals/button-url'
+        fitHeight = true
+        isCollapsable = true
         
-        data: function () {
+        data() {
             return {
+                ...super.data(),
                 url: this.options.url
             };
-        },
+        }
 
-        setup: function () {
+        setup() {
+            super.setup();
             this.headerText = document.title || this.options.buttonLabel || 'Modal';
-        },
-        
-    });
+        }
+    };
 });
